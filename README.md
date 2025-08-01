@@ -13,7 +13,7 @@ This is a C++ console-based Airline Management System that handles:
 - Uses Object-Oriented Programming
 - Implements file handling
 - Color-coded terminal output for better UX
-- Structured in classes: `Passenger`, `Flight`, `Ticket`, `Luggage`, `Noticeboard`, `Boardingandcheck_in`
+- Structured in classes: Passenger, Flight, Ticket, Luggage, Noticeboard, Boardingandcheck_in
 
 File Output
-Data is saved to `Airline management oop proj.txt`.
+Data is saved to Airline management oop proj.txt.
