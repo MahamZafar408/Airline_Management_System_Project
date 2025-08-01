@@ -4,7 +4,6 @@
 #include<cstdlib>
 #include<fstream>
 using namespace std;
-// ANSI color codes
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -29,29 +28,41 @@ void Airline :: writeairdetails() {
 }
 
 void Passenger::putdetails(int i) {
-	bool b = false;
+	bool b;
 	do {
-		cout << CYAN << "\n\t\tPlease Enter valid details below: " << RESET;
-		cout << GREEN << "\n\t\t| Details for Passenger " << i + 1 << ". | " << RESET;
-		cout << "\n\t\tName: ";
-		cin >> passengername[i];
-		cout << "\n\t\tSurname: ";
-		cin >> passengersurname[i];
-		cout << "\n\t\tGender(Male/Female): ";
-		cin >> gender[i];
-		cout << "\n\t\tAge (0-95): ";
-		cin >> passengerage[i];
-		cout << "\n\t\tPassenger ID: ";
-		cin >> passengerid[i];
-		cout << "\n\t\tPhone number: ";
-		cin >> phonenumber[i];
-		cout << "\n\t\tEmail ID (........@gmail.com) : ";
-		cin >> emailid[i];
-		cout << "\n\t\tAddress: ";
-		cin >> address[i];
+		b = false;
+		try {
+			cout << CYAN << "\n\t\tPlease Enter valid details below: " << RESET;
+			cout << GREEN << "\n\t\t| Details for Passenger " << i + 1 << ". | " << RESET;
+			cout << "\n\t\tName: ";
+			cin >> passengername[i];
+			cout << "\n\t\tSurname: ";
+			cin >> passengersurname[i];
+			cout << "\n\t\tGender(Male/Female): ";
+			cin >> gender[i];
+			cout << "\n\t\tAge (0-95): ";
+			cin >> passengerage[i];
+			if (passengerage[i] <= 0 || passengerage[i] >= 95)
+				throw invalid_argument("Invalid age");
 
-		if (!(passengerage[i] > 0 && passengerage[i] < 95) || !(passengerid[i].length() == 13) || !(phonenumber[i].length() == 11)) {
-			cout << RED << "\n\t\tInvalid Entry! Try Again..." << RESET;
+			cout << "\n\t\tPassenger ID (13 digits): ";
+			cin >> passengerid[i];
+			if (passengerid[i].length() != 13)
+				throw invalid_argument("Invalid CNIC length");
+
+			cout << "\n\t\tPhone number (11 digits): ";
+			cin >> phonenumber[i];
+			if (phonenumber[i].length() != 11)
+				throw invalid_argument("Invalid phone number");
+
+			cout << "\n\t\tEmail ID (........@gmail.com): ";
+			cin >> emailid[i];
+
+			cout << "\n\t\tAddress: ";
+			cin >> address[i];
+		}
+		catch (const invalid_argument& e) {
+			cout << RED << "\n\t\tException: " << e.what() << RESET << endl;
 			b = true;
 		}
 	} while (b);
@@ -156,7 +167,7 @@ void Ticket::addtickets(int i) {
 	
 		cout << "\n\t\tEnter your Flight type (Business or Economy):";
 		cin >> flighttype[i];
-		ticketIDs[i] = rand(); // Generate a random ticket ID
+		ticketIDs[i] = rand(); 
 		ticketPrices[i] = calculateTicketPrice(i);
 	
 }
@@ -165,7 +176,7 @@ void Ticket::displaytickets(int i) {
 	
 		cout << "\n\t\tTicket ID: " << ticketIDs[i];
 		cout << "\n\t\t";
-		displaypassengerdetails(i); // Display passenger details
+		displaypassengerdetails(i); 
 		
 		cout << "\n\t\tTicket Price: $" << ticketPrices[i] << endl;
 	
