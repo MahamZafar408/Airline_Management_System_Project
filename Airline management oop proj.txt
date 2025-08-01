@@ -1,0 +1,46 @@
+	___________________Islamabad Airlines___________________ 
+
+	___________________Main Menu____________________________
+	_________________________________________________________
+	|																																				|
+
+ Name Maham	Surname Zafar
+ AGE  21
+ Gender Female
+CNIC  6110111222222
+Phone Number 02233332323
+Flight ID 41
+Charges 14000
+
+luggage ID 19169
+
+ Flight TypeEconomy
+ Ticket ID 18467
+ Ticket Price 120
+
+				NOTICE BOARD 
+
+
+		Flights From Islamabad Departure          Arrival         Status
+		Islamabad to Lahore    09:30 AM          10:30 AM         On Time
+		Islamabad to Karachi   10:45 AM          12:30 PM         On Time
+		Islamabad to Peshawar  01:00 PM          01:45 PM         Delayed
+		Islamabad to Multan    02:00 PM          03:00 PM         Delayed
+		Islamabad to Quetta    03:20 PM          04:20 PM         On Time
+		Islamabad to Skardu    04:30 PM          05:30 PM        Cancelled
+
+		Flights To Islamabad   Departure          Arrival         Status
+		Lahore to Islamabad    09:30 AM          10:30 AM         On Time
+		Karachi to Islamabad   10:45 AM          12:30 PM         Delayed
+		Peshawar to Islamabad  01:00 PM          01:45 PM        Cancelled
+		Multan to Islamabad    02:00 PM          03:00 PM         On Time
+		Quetta to Islamabad    03:20 PM          04:20 PM         Delayed
+		Skardu to Islamabad    04:30 PM          05:30 PM         On Time
+
+
+		Passenger details Maham  Zafar
+
+		Departure From: Islamabad
+		Departure Time: 09:30 AM 
+		To: Lahore
+		Arrival Time: 10:30 AM
